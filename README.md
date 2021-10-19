@@ -26,3 +26,6 @@ CameraScreen.js
 On this screen, you will be asked permission to use your phone camera. Make sure to allow it, since otherwise you would not be able to proceed with face verification. 
 After you've done that, there will be a screen, which will automatically take Images and compare them with your ID card/passport/selfie photo. If your image and your face are
 similar, you there will be a green border around your camera. Otherwise, the border will be red.
+
+
+*Important note: The Microsoft Azure services require edits in the direct AndroidManifest and iOS files, which restricts access to the API with the Expo CLI. Moreover,
