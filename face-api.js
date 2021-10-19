@@ -4,8 +4,8 @@ const msRest = require("@azure/ms-rest-js");
 const Face = require("@azure/cognitiveservices-face");
 const uuid = require("uuid/v4");
 
-const key = "34318ef28be8423e85e6973ec68e7ab8";
-const endpoint = "https://nazar.cognitiveservices.azure.com/";
+const key = "INSERT KEY";
+const endpoint = "INSERT ENDPOINT";
 
 // <credentials>
 const credentials = new msRest.ApiKeyCredentials({ inHeader: { 'Ocp-Apim-Subscription-Key': key } });
