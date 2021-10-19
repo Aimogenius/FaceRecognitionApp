@@ -1,18 +1,27 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import {ImageBackground, StyleSheet, View, Image, Text} from 'react-native';
-
-function WelcomeScreen(props) {
+import {ImageBackground, StyleSheet, View, Image, Text, Button} from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import colors from '../config/colors';
+function WelcomeScreen({ navigation }) {
     return (
         <ImageBackground 
             style={styles.background}
             source={require('../assets/background.jpg')}>
-                <View style={styles.logoContainer}>
-                    <Image  style={styles.logo} source={require('../assets/logo-red.png')} />
-                    <Text>Sell What You Don't need</Text>
+                <View style={styles.textContainer}>
+                    
+                    <Text style={styles.welcomeText}>Welcome!</Text>
 
                 </View>
-                <View style={styles.loginButton} />
-                <View style={styles.registerButton} />
+                <View style={styles.bottomLine} />
+                <View style={styles.startButton}>
+                    <Button 
+                        title="PRESS TO START"
+                        color={colors.primary}
+                        onPress={() => navigation.navigate('SelectFile')}
+                    />
+
+                </View>
 
         </ImageBackground>
         
@@ -22,13 +31,15 @@ function WelcomeScreen(props) {
 const styles = StyleSheet.create({
     background:{
         flex:1,
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         alignItems:'center'
     },
-    loginButton: {
+    bottomLine: {
         width:'100%',
         height:70,
-        backgroundColor: '#fc5c65',
+        backgroundColor: colors.secondary,
+        position: 'absolute',
+        bottom:0
         
     },
     registerButton: {
@@ -42,10 +53,17 @@ const styles = StyleSheet.create({
         height:100,
         
     },
-    logoContainer:{
+    textContainer:{
         position:'absolute',
-        top:70,
+        top:150,
         alignItems: 'center'
+        
+    },
+    welcomeText:{
+        fontSize:24,
+        fontWeight: 'bold',
+    },
+    startButton:{
         
     }
 
